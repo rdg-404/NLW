@@ -1,0 +1,288 @@
+/* +++++++++++++++++++++++++ GERAL +++++++++++++++++++++++ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: hsl(170, 100%, 26%);
+    --headline: hsla(210, 11%, 15%, 1);
+    --paragraph: hsla(210, 9%, 31%, 1);
+    --brand-beige: hsla(39, 100%, 97%);
+    --brand-light: hsla(148, 23%, 89%);
+    --nav-height: 7.2rem;
+
+    font-size: 62.5%; /*1 rem = 10 px / reseta o rem para ficar igual px*/ 
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    font-family: "DM Sans";
+    font-size: 1.6rem; /*1.6rem = 16px*/
+
+    text-align: center;
+
+    overflow: overlay;
+}
+
+ul{
+    list-style: none;
+}
+
+.wrapper{
+    width:37.5rem ;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+    
+}
+
+/* ===============HEADER======================= */
+
+header{
+    
+    margin-top: calc(4.1rem + var(--nav-height)); /*calc serve para realizar calculos entre os elementos*/
+}
+/*criar html pelo css // cria um elemento antes de do conteudo*/
+header::before{
+    content:"";
+    width: 100%;
+    height: calc(108rem + var(--nav-height));
+    background-color: var(--brand-light);
+    display: block; /*para mexer com a posicao*/
+
+    position: absolute; /*sobrepoe todos os filhos*/
+    top: 0;
+    left: 0;
+    z-index: -1; /*fica tras de todos os filhos*/
+}
+
+header h4{
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.6rem;
+    
+}
+
+header h1{
+    font-size: 3.4rem;
+
+    color: var(--headline);
+
+    line-height: 130%;
+    margin-bottom: 2.4rem;
+
+}
+
+header p{
+    font-size: 1.8rem;
+
+    color: var(--paragraph);
+
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 3.2rem;
+}
+
+header button{
+
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 0.8rem;
+    margin-bottom: 6rem;
+
+
+    height: 6.2rem;
+    width: 26.3rem;
+    border-radius: 4rem;
+
+
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    display: flex; /*mexe com os filhos do elemento*/
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem; /*adiciona espaço entre os elementos */
+    margin-left: auto; /*ao definir width vai precisar definir margin auto para arrumar no centro*/
+    margin-right: auto;
+}
+
+header img{
+    width: 26.4rem;
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
+}
+
+.stats{
+    width: 32.7rem;
+    padding-block: 4rem;
+    margin-inline: auto;
+
+    background-color: var(--brand-beige);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6rem;
+
+    border: 0.1rem solid var(--brand-light);
+    border-radius: 0.6rem;
+  
+}
+
+.stat p{
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    line-height: 150%;
+}
+
+.stat h3{
+    font-size: 4.8rem;
+    color: var(--headline);
+    line-height: 130%;
+    margin-bottom: 0.4rem;
+}
+
+/* +++++++++++++++++++++++NAVIGATION+++++++++++++++++++++++ */
+
+nav{
+    display: flex;
+
+    height: var(--nav-height);
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav.scroll{
+    background-color: var(--primary-color);
+    width: 100vw;
+
+}
+
+nav .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav.scroll svg:nth-child(1) path {
+    fill: white;
+}
+
+nav.scroll button path{
+    stroke: white;
+}
+
+
+nav button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* +++++++++++++++++++++++MENU-EXPANDED++++++++++++++++++++++ */
+
+body.menu-expanded{
+    overflow: hidden;  /*retira a barra de rolagem*/
+}
+
+/*pega todos os filhos de menu-expanded e some com eles da pagina, exceto o nav */
+body.menu-expanded > :not(nav){
+    display: none;
+}
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu{
+    opacity: 0;
+    visibility: hidden; /*deixa os links nao clicaveis */
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menu-expanded .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: var(--nav-height);
+
+}
+
+body.menu-expanded nav{
+    position: relative;
+}
+
+.menu ul:nth-child(1){   /*aplica apenas para o filho ul*/
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    margin-top: 6rem;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+.menu ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu .button{
+    background: white;
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: var(--primary-color);
+
+    display: inline-block;
+    padding: 1.6rem 3.2rem;
+
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
+.social-links{
+    display: flex;
+    gap: 3.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded nav button{
+    position: relative;
+    z-index: 100;
+}
+
+body.menu-expanded .logo path{
+    fill: white;
+}
+
+body.menu-expanded button path{
+    stroke: white;
+}
