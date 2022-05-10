@@ -6,10 +6,11 @@
 }
 :root{
     --primary-color: hsl(170, 100%, 26%);
-    --headline: hsla(210, 11%, 15%, 1);
-    --paragraph: hsla(210, 9%, 31%, 1);
-    --brand-beige: hsla(39, 100%, 97%);
-    --brand-light: hsla(148, 23%, 89%);
+    --headline: hsl(210, 11%, 15%);
+    --paragraph: hsl(210, 9%, 31%);
+    --brand-beige: hsl(39, 100%, 97%);
+    --brand-light: hsl(148, 23%, 89%);
+    --bg-light: hsl(180, 14%, 97%);
     --nav-height: 7.2rem;
 
     font-size: 62.5%; /*1 rem = 10 px / reseta o rem para ficar igual px*/ 
@@ -28,10 +29,16 @@ body{
     text-align: center;
 
     overflow: overlay;
+
+    background: var(--bg-light);
 }
 
 ul{
     list-style: none;
+}
+
+section {
+    padding-block: 10rem;
 }
 
 .wrapper{
@@ -285,4 +292,51 @@ body.menu-expanded .logo path{
 
 body.menu-expanded button path{
     stroke: white;
+}
+
+/* +++++++++++++++++++++++SERVICES++++++++++++++++++++++ */
+
+#services header h4{
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing: 0.08rem;
+
+    color: var(--primary-color);
+
+    text-transform: uppercase;
+    
+    margin-bottom: 1.6rem;
+
+}
+
+#services header h2{
+    font-size: 3rem;
+    line-height: 3.9rem;
+
+
+    color: var(--headline);
+
+    margin-bottom: 6rem;
+
+
+}
+
+#services .cards{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+#services .card{
+    padding: 2.4rem;
+    text-align: left;
+
+    background: white;
+    
+    border: .1rem solid var(--brand-light);
+    border-radius: .6rem;
+}
+
+#services .card h3{
+    margin-block: 1.6rem;
 }
