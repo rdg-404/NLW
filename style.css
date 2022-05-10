@@ -42,8 +42,53 @@ ul{
     list-style: none;
 }
 
+img{
+    max-width: 100%; /*prga o 100% do pai*/
+}
+
 section {
     padding-block: 10rem;
+}
+
+section header h4{
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.08rem;
+    color: var(--primary-color);
+
+    text-transform: uppercase;
+
+    margin-bottom: 1.6rem;
+
+}
+
+section header h2 {
+    font-size: 3rem;
+    line-height: 3.9rem;
+
+
+    color: var(--headline);
+
+    
+}
+
+section header h1{
+    font-size: 3.4rem;
+
+    color: var(--headline);
+
+    line-height: 130%;
+    margin-bottom: 2.4rem;
+}
+
+
+section .content p{
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 150%;
+
+    color: var(--paragraph);
 }
 
 .wrapper{
@@ -52,6 +97,148 @@ section {
     padding-inline: 2.4rem;
     
 }
+ 
+
+/* +++++++++++++++++++++++NAVIGATION+++++++++++++++++++++++ */
+
+nav{
+    display: flex;
+
+    height: var(--nav-height);
+
+    position: fixed;
+    top: 0;
+    width: 100vw;
+
+    z-index: 100;
+}
+
+nav.scroll{
+    background-color: var(--primary-color);
+
+
+}
+
+nav .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav.scroll .logo path {
+    fill: white;
+}
+
+nav.scroll button path{
+    stroke: white;
+}
+
+
+nav button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* +++++++++++++++++++++++MENU-EXPANDED++++++++++++++++++++++ */
+
+body.menu-expanded{
+    overflow: hidden;  /*retira a barra de rolagem*/
+}
+
+/*pega todos os filhos de menu-expanded e some com eles da pagina, exceto o nav */
+body.menu-expanded > :not(nav){
+    visibility: hidden;
+}
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu{
+    opacity: 0;
+    visibility: hidden; /*deixa os links nao clicaveis */
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu{
+    transform: translateX(100%);
+}
+
+body.menu-expanded .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: var(--nav-height);
+
+    transition: transform 300ms;
+    transform: translateX(0);
+}
+
+
+.menu ul:nth-child(1){   /*aplica apenas para o filho ul*/
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    margin-top: 6rem;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+.menu ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu .button{
+    background: white;
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: var(--primary-color);
+
+    display: inline-block;
+    padding: 1.6rem 3.2rem;
+
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
+.social-links{
+    display: flex;
+    gap: 3.2rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+body.menu-expanded .logo,
+body.menu-expanded nav button{
+    position: relative;
+    z-index: 100;
+}
+
+body.menu-expanded .logo path{
+    fill: white;
+}
+
+body.menu-expanded button path{
+    stroke: white;
+}
+
 
 /* ===============#HOME======================= */
 
@@ -73,22 +260,6 @@ section {
     z-index: -1; /*fica tras de todos os filhos*/
 }
 
-#home h4{
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    margin-bottom: 1.6rem;
-    
-}
-
-#home h1{
-    font-size: 3.4rem;
-
-    color: var(--headline);
-
-    line-height: 130%;
-    margin-bottom: 2.4rem;
-
-}
 
 #home p{
     font-size: 1.8rem;
@@ -164,174 +335,12 @@ section {
     margin-bottom: 0.4rem;
 }
 
-/* +++++++++++++++++++++++NAVIGATION+++++++++++++++++++++++ */
 
-nav{
-    display: flex;
-
-    height: var(--nav-height);
-
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    z-index: 100;
-}
-
-nav.scroll{
-    background-color: var(--primary-color);
-    width: 100vw;
-
-}
-
-nav .wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-nav.scroll svg:nth-child(1) path {
-    fill: white;
-}
-
-nav.scroll button path{
-    stroke: white;
-}
-
-
-nav button{
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* +++++++++++++++++++++++MENU-EXPANDED++++++++++++++++++++++ */
-
-body.menu-expanded{
-    overflow: hidden;  /*retira a barra de rolagem*/
-}
-
-/*pega todos os filhos de menu-expanded e some com eles da pagina, exceto o nav */
-body.menu-expanded > :not(nav){
-    display: none;
-}
-
-.menu,
-.close-menu,
-body.menu-expanded .open-menu{
-    opacity: 0;
-    visibility: hidden; /*deixa os links nao clicaveis */
-}
-
-body.menu-expanded .menu,
-body.menu-expanded .close-menu{
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu{
-    transform: translateX(100%);
-}
-
-body.menu-expanded .menu{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: var(--primary-color);
-
-    width: 100vw;
-    height: 100vh;
-
-    padding-top: var(--nav-height);
-
-    transition: transform 300ms;
-    transform: translateX(0);
-}
-
-body.menu-expanded nav{
-    position: relative;
-}
-
-.menu ul:nth-child(1){   /*aplica apenas para o filho ul*/
-    display: flex;
-    flex-direction: column;
-    gap: 4.8rem;
-    margin-top: 6rem;
-
-    font-weight: 700;
-    font-size: 2.4rem;
-    line-height: 3.1rem;
-}
-
-.menu ul li a{
-    color: white;
-    text-decoration: none;
-}
-
-.menu .button{
-    background: white;
-    border-radius: 4rem;
-    font-weight: 700;
-    font-size: 1.8rem;
-    line-height: 2.3rem;
-    text-transform: uppercase;
-    text-decoration: none;
-
-    color: var(--primary-color);
-
-    display: inline-block;
-    padding: 1.6rem 3.2rem;
-
-    margin-top: 4.8rem;
-    margin-bottom: 8rem;
-}
-
-.social-links{
-    display: flex;
-    gap: 3.2rem;
-    align-items: center;
-    justify-content: center;
-}
-
-body.menu-expanded .logo,
-body.menu-expanded nav button{
-    position: relative;
-    z-index: 100;
-}
-
-body.menu-expanded .logo path{
-    fill: white;
-}
-
-body.menu-expanded button path{
-    stroke: white;
-}
 
 /* +++++++++++++++++++++++SERVICES++++++++++++++++++++++ */
 
-#services header h4{
-    font-size: 1.4rem;
-    line-height: 150%;
-    letter-spacing: 0.08rem;
-
-    color: var(--primary-color);
-
-    text-transform: uppercase;
-    
-    margin-bottom: 1.6rem;
-
-}
-
 #services header h2{
-    font-size: 3rem;
-    line-height: 3.9rem;
-
-
-    color: var(--headline);
-
     margin-bottom: 6rem;
-
-
 }
 
 #services .cards{
@@ -352,4 +361,23 @@ body.menu-expanded button path{
 
 #services .card h3{
     margin-block: 1.6rem;
+}
+
+
+
+
+/* +++++++++++++++++++++++ABOUT++++++++++++++++++++++ */
+
+#about{
+    text-align: left;
+    background-color: var(--brand-beige);
+}
+
+#about header h2{
+    margin-bottom: 2.4rem;
+}
+
+#about .content p{
+    margin-top: 2.4rem;
+    margin-bottom: 6rem;
 }
