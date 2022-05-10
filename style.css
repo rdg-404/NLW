@@ -16,6 +16,11 @@
     font-size: 62.5%; /*1 rem = 10 px / reseta o rem para ficar igual px*/ 
 }
 
+html{
+    /* chrome://flags/#smooth-scrolling*/ /*caso o scroll suave nao funcionar*/
+    scroll-behavior: smooth;
+}
+
 html,
 body{
     width: 100%;
@@ -48,14 +53,14 @@ section {
     
 }
 
-/* ===============HEADER======================= */
+/* ===============#HOME======================= */
 
-header{
+#home{
     
-    margin-top: calc(4.1rem + var(--nav-height)); /*calc serve para realizar calculos entre os elementos*/
+    padding-top: calc(4.1rem + var(--nav-height)); /*calc serve para realizar calculos entre os elementos*/
 }
 /*criar html pelo css // cria um elemento antes de do conteudo*/
-header::before{
+#home::before{
     content:"";
     width: 100%;
     height: calc(108rem + var(--nav-height));
@@ -68,14 +73,14 @@ header::before{
     z-index: -1; /*fica tras de todos os filhos*/
 }
 
-header h4{
+#home h4{
     font-size: 1.4rem;
     color: var(--primary-color);
     margin-bottom: 1.6rem;
     
 }
 
-header h1{
+#home h1{
     font-size: 3.4rem;
 
     color: var(--headline);
@@ -85,7 +90,7 @@ header h1{
 
 }
 
-header p{
+#home p{
     font-size: 1.8rem;
 
     color: var(--paragraph);
@@ -95,7 +100,7 @@ header p{
     margin-bottom: 3.2rem;
 }
 
-header button{
+#home button{
 
     background-color: var(--primary-color);
     border: none;
@@ -121,14 +126,14 @@ header button{
     margin-right: auto;
 }
 
-header img{
+#home img{
     width: 26.4rem;
     display: block;
     margin-inline: auto;
     object-position: 0 2rem;
 }
 
-.stats{
+#home .stats{
     width: 32.7rem;
     padding-block: 4rem;
     margin-inline: auto;
@@ -145,14 +150,14 @@ header img{
   
 }
 
-.stat p{
+#home .stat p{
     margin: 0;
     color: var(--primary-color);
     font-size: 1.6rem;
     line-height: 150%;
 }
 
-.stat h3{
+#home .stat h3{
     font-size: 4.8rem;
     color: var(--headline);
     line-height: 130%;
@@ -170,6 +175,8 @@ nav{
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    z-index: 100;
 }
 
 nav.scroll{
@@ -222,6 +229,10 @@ body.menu-expanded .close-menu{
     visibility: visible;
 }
 
+.menu{
+    transform: translateX(100%);
+}
+
 body.menu-expanded .menu{
     position: fixed;
     top: 0;
@@ -233,6 +244,8 @@ body.menu-expanded .menu{
 
     padding-top: var(--nav-height);
 
+    transition: transform 300ms;
+    transform: translateX(0);
 }
 
 body.menu-expanded nav{
