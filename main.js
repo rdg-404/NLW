@@ -1,12 +1,28 @@
+ window;addEventListener('scroll', onScroll)
+ 
+ onScroll()
  function onScroll() {
-    if(scrollY == 0){
-        navigation.classList.remove('scroll') //remove a class no html
-    }
-    else if(scrollY > 50){
-        navigation.classList.add('scroll') //adiciona a class no html
-    }
-    
+   showNavOnScroll()
+   showBackToTopButtonOnScroll()
  }
+
+ function showNavOnScroll(){
+   if(scrollY == 0){
+      navigation.classList.remove('scroll') //remove a class no html
+  }
+  else if(scrollY > 50){
+      navigation.classList.add('scroll') //adiciona a class no html
+  }
+ }
+
+function showBackToTopButtonOnScroll(){
+   if(scrollY > 500){
+      backToTopButton.classList.add('show') //remove a class no html
+  }
+  else{
+      backToTopButton.classList.remove('show') //adiciona a class no html
+  }
+}
 
  function openMenu() {
     document.body.classList.add('menu-expanded')
