@@ -535,6 +535,7 @@ footer p{
         transform: initial;
         color: initial;
         background-color: initial;
+        filter: initial;
     }
 
     /*retirando os elemenos de mobile da tela*/
@@ -601,6 +602,7 @@ footer p{
 
 
     /*altera o texto do menu ao passar o mouse*/
+    nav#navigation .menu li a.active,
     nav#navigation .menu li a:hover{
         opacity: 1;
         font-weight: 700;
@@ -631,6 +633,7 @@ footer p{
    
 
     /*comportamento do elemento  criado acima, ao passar o mouse pelos itens do menu*/
+    nav#navigation .menu li a.active::after,
     nav#navigation .menu li a:hover::after{
         padding-inline: 0.8rem;
         width: 100%;
@@ -638,18 +641,26 @@ footer p{
     
 
     /*altera a opacidade das opcoes ao passar o mouse ao rolar a pagina*/
+    nav#navigation.scroll .menu li a.active,
     nav#navigation.scroll .menu li a:hover{
         opacity: 1;
     }
 
 
     /*altera o botao ao passar o mouse em cima*/
+    nav#navigation.scroll .menu a.button.active,
     nav#navigation.scroll .menu a.button:hover{
         background-color: var(--primary-color);
         filter: brightness(1.3); /*aplica luz ao elemento*/
         border: none;
     }
 
+    nav#navigation .menu a.button:hover{
+        background-color: var(--primary-color);
+        border: none;
+        color: white;
+
+    }
 
 }
 
