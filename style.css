@@ -315,7 +315,7 @@ body.menu-expanded button path{
 #home::before{
     content:"";
     width: 100%;
-    height: calc(108rem + var(--nav-height));
+    height: calc(76% + var(--nav-height));
     background-color: var(--brand-light);
     display: block; /*para mexer com a posicao*/
 
@@ -517,8 +517,12 @@ footer p{
     /* +++++++++++++++++++++++GERAL++++++++++++++++++++++ */
     .wrapper{
         width: min(112rem, 100%);
+        display: grid;
     }
-
+    
+    body{
+        overflow: auto; /*nao deixa o conteudo sobreposto*/
+    }
     /* +++++++++++++++++++++++NAVIGATION++++++++++++++++++++++ */
 
     /*========RESET==========*/
@@ -655,12 +659,77 @@ footer p{
         border: none;
     }
 
+
+    /*altera o botao ao passar o mouse*/
     nav#navigation .menu a.button:hover{
         background-color: var(--primary-color);
         border: none;
         color: white;
 
     }
+
+    /*===================HOME================*/
+
+    /*ajusta o tamanho do background do home*/
+    #home::before{
+        height: calc(86% - var(--nav-height));
+    }
+
+    #home{
+        padding-top: var(--nav-height);
+    }
+
+    #home .wrapper{
+        grid-template-columns: 60.5rem 1fr;  /*cria duas colunas para os elementos em sequencia*/
+        grid-template-areas: /*cria areas definidas*/
+        'X Y'
+        'Z Z';
+    }
+
+    #home .col-a{
+        grid-area: X; /*ocupa a area X*/
+        text-align: left;
+        align-self: center; /**alinha ele msm ao centro/
+    }
+
+    #home .col-b{
+        grid-area: Y; /*ocupa a area Y*/
+    }
+
+
+    #home h1{
+        font-size: 5.2rem;
+    }
+
+    #home .content p{
+        font-size: 1.8rem;
+    }
+    
+
+    #home .stats{
+        grid-area: Z; /*ocupa a area Z*/
+        flex-direction: row;
+        width: 100%;
+        gap: 0;
+        
+    }
+
+    #home .stats .stat + .stat{ /*pega o stat que anterior a ele tem um stat*/
+        border-left: 1px solid var(--primary-color);
+    }
+
+    #home .stats .stat {
+        flex: 1;
+    }
+
+    #home .button{
+        margin: 0;
+    }
+
+    #home img{
+        width: 42rem;
+    }
+
 
 }
 
