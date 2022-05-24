@@ -519,6 +519,14 @@ footer p{
         width: min(112rem, 100%);
         display: grid;
     }
+
+    .col-a{
+        grid-area: X;
+    }
+
+    .col-b{
+        grid-area: Y;
+    }
     
     body{
         overflow: auto; /*nao deixa o conteudo sobreposto*/
@@ -532,6 +540,8 @@ footer p{
         font-size: 4rem;
         line-height: 5.2rem;
     }
+
+    
     /* +++++++++++++++++++++++NAVIGATION++++++++++++++++++++++ */
 
     /*========RESET==========*/
@@ -696,14 +706,12 @@ footer p{
     }
 
     #home .col-a{
-        grid-area: X; /*ocupa a area X*/
+    
         text-align: left;
-        align-self: center; /**alinha ele msm ao centro/
+        align-self: center; /*alinha ele msm ao centro*/
     }
 
-    #home .col-b{
-        grid-area: Y; /*ocupa a area Y*/
-    }
+
 
 
     #home h1{
@@ -761,7 +769,24 @@ footer p{
 
       /*=====================ABOUT=================*/
 
-      
+      #about .wrapper{
+          grid-template-columns: 48rem 1fr;
+          grid-template-areas: 'Y X';
+          gap: 7rem;
+      }
+
+      #about .col-a{
+          align-self: center;
+          text-align: justify;
+      }
+
+      #about .col-b img{
+          width: 50rem;
+      }
+
+      #about .content p{
+          margin-bottom: 0;
+      }
 
 
 }
