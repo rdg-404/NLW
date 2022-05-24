@@ -14,15 +14,15 @@
 
 
 
-## _Services section
+## _Services section_
 ![Preview](./assets/imgsPreview/img2.png)
 
 
-## _About section
+## _About section_
 ![Preview](./assets/imgsPreview/img3.png)
 
 
-## _Contact section
+## _Contact section_
 ![Preview](./assets/imgsPreview/img4.png)
 
 
