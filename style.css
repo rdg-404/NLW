@@ -308,7 +308,7 @@ body.menu-expanded button path{
 /* ===============#HOME======================= */
 
 #home{
-    
+    padding-block: 0;
     padding-top: calc(4.1rem + var(--nav-height)); /*calc serve para realizar calculos entre os elementos*/
 }
 /*criar html pelo css // cria um elemento antes de do conteudo*/
@@ -523,6 +523,15 @@ footer p{
     body{
         overflow: auto; /*nao deixa o conteudo sobreposto*/
     }
+
+    section{
+        padding-block: 16rem;
+    }
+
+    section h2{
+        font-size: 4rem;
+        line-height: 5.2rem;
+    }
     /* +++++++++++++++++++++++NAVIGATION++++++++++++++++++++++ */
 
     /*========RESET==========*/
@@ -672,7 +681,7 @@ footer p{
 
     /*ajusta o tamanho do background do home*/
     #home::before{
-        height: calc(86% - var(--nav-height));
+        height: calc(96% - var(--nav-height));
     }
 
     #home{
@@ -729,6 +738,30 @@ footer p{
     #home img{
         width: 42rem;
     }
+
+
+    /*=====================SERVICES=================*/
+
+    #services h2{
+        width: 47rem;
+        margin-inline: auto;
+    }
+
+    #services .cards {
+        flex-direction: row;
+        flex-wrap: wrap; /*quebra de linha*/
+        gap: 4rem;
+    }
+
+    #services .card {
+        width: 30%;
+        flex-grow: 1; /*preenche ao maximo o tamanho do elemento na pagina*/
+    }
+
+
+      /*=====================ABOUT=================*/
+
+      
 
 
 }
