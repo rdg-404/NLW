@@ -17,7 +17,11 @@
 
 
 <figure class="video_container">
-  <iframe src="https://drive.google.com/file/d/1-_mSStMOtXdsRSwC-0FpdA5zo0Gcafpc/view?usp=sharing" frameborder="0" allowfullscreen="true"> </iframe>
+  <video controls="true" allowfullscreen="false" poster="path/to/poster_image.png">
+    <source src="./assets/videoPreview/videoMobilePreview.mp4" type="video/mp4">
+    <source src="./assets/videoPreview/videoMobilePreview.ogg" type="video/ogg">
+    <source src="./assets/videoPreview/videoMobilePreview.webm" type="video/webm">
+  </video>
 </figure>
 
 
