@@ -9,19 +9,20 @@
 - [Figma](https://www.figma.com/file/CSWWouZAWODrKuBLZe8QE3/DoctorCare-(Community)?node-id=0%3A1) - For the model template.
 
 ## Application preview
-## _Home page_
+## _Home section_
 ![Preview](./assets/imgsPreview/preview.png)
 
 
 
-## _Services page_
+## _Services section
 ![Preview](./assets/imgsPreview/img2.png)
 
 
-## _About page_
+## _About section
 ![Preview](./assets/imgsPreview/img3.png)
 
-## _Contact page_
+
+## _Contact section
 ![Preview](./assets/imgsPreview/img4.png)
 
 
