@@ -27,7 +27,7 @@
 
 
 
-## _Mobile version_
+## _Mobile v.ersion_
 ![Preview](./assets/imgsPreview/mobileVersion.png)
 
 
