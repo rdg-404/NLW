@@ -10,4 +10,9 @@
 
 ## Application preview
 ![Preview](./assets/imgsPreview/preview.png)
+![Preview](./assets/imgsPreview/img2.png.png)
+![Preview](./assets/imgsPreview/img3.png.png)
+![Preview](./assets/imgsPreview/img4.png.png)
+![Preview](./assets/videoPreview/videoMobilePreview.mp4)
+
 
